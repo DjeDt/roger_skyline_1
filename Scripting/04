@@ -1,0 +1,10 @@
+#!/bin/bash
+file="/etc/crontab"
+curr_date="2015-05-03 15:25:18"
+last_mod=$(date -r ${file} '+%Y-%m-%d %H:%M:%S')
+
+if [ "${last_mod}" != "${curr_date}" ]; then
+   mail -s "crontab modified" --user=root;
+fi
+
+# pour cron: 0 0 * * * [PATH_TO]/roger_skyline_1/Scripting/04

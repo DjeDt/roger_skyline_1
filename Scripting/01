@@ -1,0 +1,7 @@
+#!/bin/bash
+file=/etc/passwd
+IFS=':'
+
+while read -r line; do
+	  echo $line | awk '{print $1, $3, $6}'
+done < $file

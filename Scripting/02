@@ -1,0 +1,4 @@
+#!/bin/bash
+apt-get update >> /var/log/update_script && apt-get upgrade >> /var/log/update_script
+
+#Pour setup cron : 0 4 * * 1 [PATH_TO]/roger_skyline_1/Scripting/02
