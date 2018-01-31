@@ -1,0 +1,2 @@
+#!/bin/bash
+ifconfig -a | sed 's/\([a-z]*.\).*/\1/' | tr -d '\t' | sed '/^\s*$/d'
