@@ -1,1 +1,1 @@
-le path du fichier du serveur dsn utilise est "/etc/resolv.conf"
+le path du fichier du serveur dsn utilise est "/var/run/resolv.conf"
