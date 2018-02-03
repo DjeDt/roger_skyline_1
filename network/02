@@ -1,2 +1,2 @@
 #!/bin/bash
-ifconfig en0 | grep 'inet'
+ipconfig getifaddr en0

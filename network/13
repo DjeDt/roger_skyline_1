@@ -1,0 +1,1 @@
+nslookup 10.51.1.2555 montre que le serveur utilise le protocole dhcp, il est donc de type dhcp.
