@@ -1,2 +1,2 @@
 #!/bin/bash
-du -sk $1* | sort -n
+du -sk $1/* | sort -n

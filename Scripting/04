@@ -1,10 +1,18 @@
 #!/bin/bash
 file="/etc/crontab"
-curr_date="2015-05-03 15:25:18"
-last_mod=$(date -r ${file} '+%Y-%m-%d %H:%M:%S')
+result="/etc/crontab_md5"
+final_result="/tmp/final_result.txt"
 
-if [ "${last_mod}" != "${curr_date}" ]; then
-   mail -s "crontab modified" --user=root;
+if [ ! -e $result ]; then
+	md5sum $file | awk '{print $1}' > $result
+	exit 1
+fi
+
+md5sum $file | awk '{print $1, $result}' > $final_result
+if [[ ! md5sum -c $final_result ]]; then
+	mail -s '$file modified' root@localhost <<END
+	crontab file has been modified
+END
 fi
 
 # pour cron: 0 0 * * * [PATH_TO]/roger_skyline_1/Scripting/04
